@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import {Redirect} from 'react-router-dom';
+import { faChevronLeft, faChevronRight, faKey, faRocket, faUsers } from '@fortawesome/free-solid-svg-icons';
 import './Home.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -26,20 +27,18 @@ class Home extends Component {
     };
 
     return (
+     
       <div className="home-container">
         <div className="slider-container">
           <Slider ref={(slider) => (this.slider = slider)} {...settings}>
             <div>
               <div className="image-wrapper">
-                {/* Image 1 */}
                 <img src={goat} alt="goat" className="slider-image" />
-                {/* Left arrow */}
                 <FontAwesomeIcon
                   icon={faChevronLeft}
                   className="slider-arrow prev"
                   onClick={() => this.slider.slickPrev()}
                 />
-                {/* Right arrow */}
                 <FontAwesomeIcon
                   icon={faChevronRight}
                   className="slider-arrow next"
@@ -49,15 +48,12 @@ class Home extends Component {
             </div>
             <div>
               <div className="image-wrapper">
-                {/* Image 2 */}
                 <img src={fall} alt="fall" className="slider-image" />
-                {/* Left arrow */}
                 <FontAwesomeIcon
                   icon={faChevronLeft}
                   className="slider-arrow prev"
                   onClick={() => this.slider.slickPrev()}
                 />
-                {/* Right arrow */}
                 <FontAwesomeIcon
                   icon={faChevronRight}
                   className="slider-arrow next"
@@ -67,15 +63,12 @@ class Home extends Component {
             </div>
             <div>
               <div className="image-wrapper">
-                {/* Image 3 */}
                 <img src={rocket} alt="rocket" className="slider-image" />
-                {/* Left arrow */}
                 <FontAwesomeIcon
                   icon={faChevronLeft}
                   className="slider-arrow prev"
                   onClick={() => this.slider.slickPrev()}
                 />
-                {/* Right arrow */}
                 <FontAwesomeIcon
                   icon={faChevronRight}
                   className="slider-arrow next"
@@ -96,6 +89,41 @@ class Home extends Component {
             <Link to="/pay-to-play" className="image-button" style={{ backgroundImage: `url(${payToPlay})` }}>
               <span className="button-text">PLAYLIST</span>
             </Link>
+          </div>
+        </div>
+
+        <div className="key-features">
+          <h2>Key Features</h2>
+          <div className="feature">
+            <FontAwesomeIcon icon={faKey} className="feature-icon" />
+            <h3>Feature One</h3>
+            <p>Some description about feature one.</p>
+          </div>
+          <div className="feature">
+            <FontAwesomeIcon icon={faRocket} className="feature-icon" />
+            <h3>Feature Two</h3>
+            <p>Some description about feature two.</p>
+          </div>
+          <div className="feature">
+            <FontAwesomeIcon icon={faUsers} className="feature-icon" />
+            <h3>Feature Three</h3>
+            <p>Some description about feature three.</p>
+          </div>
+        </div>
+
+        <div className="testimonials">
+          <h2>Testimonials</h2>
+          <div className="testimonial">
+            <p>"This is the best service ever!"</p>
+            <p className="author">- John Doe</p>
+          </div>
+          <div className="testimonial">
+            <p>"Absolutely wonderful experience!"</p>
+            <p className="author">- Jane Smith</p>
+          </div>
+          <div className="testimonial">
+            <p>"I love this platform!"</p>
+            <p className="author">- Emily Johnson</p>
           </div>
         </div>
       </div>

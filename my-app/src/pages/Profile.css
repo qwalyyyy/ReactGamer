@@ -1,91 +1,126 @@
-.profile-page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s ease;
+/* Styles for registration container */
+.registration-container {
+  background: linear-gradient(to right, #007bff, #4b6cb7);
+  padding: 30px;
+  border-radius: 15px;
+  width: 450px; /* Adjust width as needed */
+  margin: 40px auto; /* Center the container */
+  color: #fff; /* Text color */
+  animation: fadeInUp 1s ease; /* Fade-in animation */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
 }
 
-@keyframes fadeIn {
+/* Additional styles for form elements */
+.form-group {
+  margin-bottom: 20px;
+  animation: slideInLeft 1s ease; /* Slide-in animation */
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type='email'],
+input[type='text'],
+input[type='password'],
+input[type='date'],
+input[type='file'],
+button {
+  width: calc(100% - 22px); /* Adjust width for borders */
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: background-color 0.3s ease; /* Smooth hover transition */
+}
+
+input[type='email']:hover,
+input[type='text']:hover,
+input[type='password']:hover,
+input[type='date']:hover,
+input[type='file']:hover,
+button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+button {
+  background-color: #4b6cb7;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #182848;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
   from {
     opacity: 0;
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.profile-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-.profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  border: 5px solid #fff;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-  animation: scaleIn 0.5s ease;
-}
-
-@keyframes scaleIn {
+@keyframes slideInLeft {
   from {
-    transform: scale(0);
+    opacity: 0;
+    transform: translateX(-20px);
   }
   to {
-    transform: scale(1);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-.profile-title {
-  color: #333;
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+/* Styles for error messages */
+.form-group.error input {
+  border-color: #dc3545; /* Red border for fields with errors */
 }
 
-.profile-info h2,
-.profile-stats h2 {
-  color: #333;
-  font-size: 1.8em;
-  margin-bottom: 10px;
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
 }
 
-.profile-info p,
-.profile-stats p {
-  margin: 5px 0;
-  font-size: 1.2em;
+/* Animation for icons on hover */
+.form-group label i {
+  transition: transform 0.3s ease;
 }
 
-.profile-actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+.form-group label i:hover {
+  transform: scale(1.1);
 }
 
-.edit-btn,
-.change-pass-btn,
-.logout-btn {
-  padding: 12px 24px;
-  margin: 0 10px;
-  font-size: 1.2em;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+/* Animation for "Register/Login" button */
+button {
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.edit-btn:hover,
-.change-pass-btn:hover,
-.logout-btn:hover {
-  background-color: #0056b3;
+button:hover {
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+button:active {
+  transform: scale(0.95); /* Shrink the button on click */
+}
+
+/* Background animation */
+.registration-container {
+  animation: backgroundAnimation 10s infinite alternate ease; /* Background animation */
+}
+
+@keyframes backgroundAnimation {
+  from {
+    filter: brightness(100%);
+  }
+  to {
+    filter: brightness(90%); /* Slightly darken the background */
+  }
 }

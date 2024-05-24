@@ -1,49 +1,43 @@
+/* General Styles */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Градиентный фон */
+  color: #fff; /* Белый текст для контраста */
 }
 
+/* Home Container */
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  
+  border-radius: 10px; /* Скругление углов */
+  
+}
 
-
+/* Slider Container */
 .slider-container {
   max-width: 800px;
-  margin: 50px auto 0; /* Updated margin with top margin of 20px */
+  margin: 50px auto 0;
   border-radius: 10px;
   overflow: hidden;
-  margin-left: 100px;
+  
+  
 }
 
-
+/* Slider Image */
 .slider-image {
-  width: 800px; /* Ширина изображения в слайдере */
-  height: 420px; /* Высота изображения в слайдере */
-  border-radius: 10px; /* Округление углов изображений */
+  width: 800px;
+  height: 420px;
+  border-radius: 10px;
 }
 
+/* Image Wrapper */
 .image-wrapper {
   position: relative;
-  display: inline-block; /* Сделать обертку блочным элементом, чтобы кнопка и изображение были в одной линии */
 }
-
-.image-button {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  padding: 5px 10px;
-  background-color: rgba(0, 123, 255, 0.8);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.image-button:hover {
-  background-color: rgba(0, 123, 255, 1);
-  transform: scale(1.05);
-}
-/* Home.css */
 
 /* Slider Arrows */
 .slider-arrow {
@@ -65,52 +59,25 @@ body {
 }
 
 .prev {
-  left: 20px; /* Position the left arrow */
+  left: 20px;
 }
 
 .next {
-  right: 20px; /* Position the right arrow */
+  right: 20px;
 }
 
-/* Поиск */
-.search-container {
-  display: flex;
-  justify-content: flex-start; /* Выравнивание по левому краю */
-  align-items: center;
-  margin-bottom: 20px; /* Отступ снизу для разделения поисковой строки и слайдера */
-  margin-top: 40px; /* Отступ от шапки */
-}
-.search-input {
-  padding: 4px;
-  border-radius: 4px;
-  margin-right: 10px;
-  width: 150px; /* Ширина поисковой строки */
-}
-
-.search-button {
-  padding: 8px 16px;
-  border-radius: 4px;
-  border: none;
-  background-color: #03244759; /* Измененный цвет кнопки поиска */
-  color: white;
-  cursor: pointer;
-  top: -100px;
-}
-
-.search-button:hover {
-  background-color: #0056b3;
-}
-
+/* Button Images Container */
 .button-images-container {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .button-image-wrapper {
-  margin: 100px; /* Большой отступ между фото */
+  margin: 0 20px; /* Adjust space between images */
 }
 
+/* Image Button */
 .image-button {
   display: block;
   width: 500px;
@@ -121,58 +88,94 @@ body {
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  transition: transform 0.3s ease;
- 
-  border: none; /* Remove the border */
-  overflow: hidden; /* Скрытие выхода за границы */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.image-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Text */
 .button-text {
   position: absolute;
-  bottom: 30%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
-  padding: 5px;
-  font-size: 30px; /* Регулируйте размер шрифта по необходимости */
-  z-index: 1; /* Помещаем текст над фото */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Добавляем тень тексту */
-  transition: color 0.3s ease, text-shadow 0.3s ease; /* Добавляем анимацию изменения цвета и тени текста */
+  font-size: 30px;
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .image-button:hover .button-text {
-  color: #55acee; /* Изменение цвета текста при наведении на фото */
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Увеличиваем тень при наведении */
-}
-/* NewArrivalsBlock.css */
-
-.new-arrivals-container {
-  display: flex;
-  justify-content: space-around;
-  margin: 50px 0;
+  color: #55acee;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
 }
 
-.new-arrival {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Key Features Section */
+.key-features {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.new-arrival-image {
-  width: 200px; /* Adjust image width as needed */
-  height: 300px; /* Adjust image height as needed */
-  margin-bottom: 10px;
+
+.key-features h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
 }
 
-.new-arrival-details {
+.key-features .feature {
+  display: inline-block;
+  width: 200px;
+  margin: 20px;
   text-align: center;
 }
 
-.new-arrival-details h3 {
-  margin-bottom: 5px;
+.key-features .feature-icon {
+  font-size: 50px;
+  margin-bottom: 10px;
 }
 
-.new-arrival-details p {
+/* Testimonials Section */
+.testimonials {
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 50px;
+  background-color: #333; /* Dark background color */
+  border-radius: 10px;
+  background: linear-gradient(to right, #6a11cb, #2575fc); /* Градиентный фон */
+}
+
+
+.testimonials h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.testimonials .testimonial {
+  display: inline-block;
+  width: 300px;
+  margin: 20px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.testimonials .testimonial p {
+  font-size: 16px;
   color: #666;
+  margin-bottom: 10px;
+}
+
+.testimonials .testimonial .author {
+  font-size: 14px;
+  font-weight: bold;
 }

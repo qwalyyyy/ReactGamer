@@ -1,34 +1,38 @@
-import React, { Component } from 'react';
-import './Profile.css'; // Import CSS file for styles
-import profileImage from '../pages/images/profile.png'; // Import profile picture
+import React from 'react';
+import './Profile.css'; // Import your CSS file for styles
 
-export default class Profile extends Component {
-  render() {
-    return (
-      <div className="profile-page">
-        <div className="profile-header">
-          <img src={profileImage} alt="Profile" className="profile-image" />
-          <h1 className="profile-title">Welcome to Your Profile</h1>
+const ProfilePage = () => {
+  return (
+    <div className="profile-container">
+      <h2 className="profile-heading">Профиль</h2>
+      <div className="profile-info">
+        <div className="profile-group">
+          <label htmlFor="username">
+            <i className="fas fa-user"></i> Имя пользователя
+          </label>
+          <span className="profile-value">Иванов Иван</span>
         </div>
-        <div className="profile-info">
-          <h2>User Information</h2>
-          <p>Name: John Doe</p>
-          <p>Email: johndoe@example.com</p>
-          <p>Level: 10</p>
-          <p>Experience Points: 5000</p>
+        <div className="profile-group">
+          <label htmlFor="email">
+            <i className="fas fa-envelope"></i> Email
+          </label>
+          <span className="profile-value">ivanov@example.com</span>
         </div>
-        <div className="profile-stats">
-          <h2>Game Stats</h2>
-          <p>Games Played: 100</p>
-          <p>Wins: 50</p>
-          <p>Losses: 50</p>
+        <div className="profile-group">
+          <label htmlFor="phone">
+            <i className="fas fa-phone"></i> Телефон
+          </label>
+          <span className="profile-value">+7 123 456 7890</span>
         </div>
-        <div className="profile-actions">
-          <button className="edit-btn">Edit Profile</button>
-          <button className="change-pass-btn">Change Password</button>
-          <button className="logout-btn">Logout</button>
+        <div className="profile-group">
+          <label htmlFor="address">
+            <i className="fas fa-map-marker-alt"></i> Адрес
+          </label>
+          <span className="profile-value">Москва, Россия</span>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default ProfilePage;
